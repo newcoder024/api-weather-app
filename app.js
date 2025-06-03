@@ -1,5 +1,12 @@
 const apiKey = "85a07391f9cff6eeb48b4398fdb483ca"; // api-sleutel voor OpenWeatherMap
 
+// imgs voor weer 
+let customImg = "";
+
+switch (customImg) {
+    case weather.description === "clear sky":
+}
+
 function searchCity(){
     const city = document.getElementById("locationInput").value.trim();
     document.getElementById("result-cont").style.display = "flex"; // maak de section zichtbaar
@@ -7,11 +14,11 @@ function searchCity(){
     document.getElementById("weather-results").style.display = "flex"; // maak de weather-results zichtbaar
 
     if (city === "") {
-        document.getElementById("weather-results").innerHTML = "<p>Put a location.</p>";
+        document.getElementById("weather-results").innerHTML = "<p>Look up a city to see the weather.</p>";
         return;
     }
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=nl`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=en`)
     .then(response => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
