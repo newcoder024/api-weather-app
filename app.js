@@ -25,11 +25,21 @@ function searchCity(){
             feels: data.main.feels_like,
             wind: data.wind.speed,
             humidity: data.main.humidity,
-            icon: data.weather[0].icon
+            icon: data.weather[0].icon,
+            pressure: data.main.pressure,
+            temp_min: data.main.temp_min,
+            temp_max: data.main.temp_max,
         }
         // const icon = document.getElementById("weather-icon");
         // icon.src = `https://openweathermap.org/img/wn/${weather.icon}.png`;
         // icon.alt = weather.description;
+        document.getElementById("wind").textContent = `${weather.wind} m/s`;
+        document.getElementById("humid").textContent = `${weather.humidity}%`;
+        document.getElementById("feels").textContent = `${weather.feels} °C`;
+        document.getElementById("pressure").textContent = `${weather.pressure} hPa`;
+        document.getElementById("temp-min").textContent = `${weather.temp_min} °C`;
+        document.getElementById("temp-max").textContent = `${weather.temp_max} °C`;
+
         document.getElementById("temp").textContent = `${weather.temp} °C`;
         document.getElementById("desc").textContent = `${weather.description}`;
         document.getElementById("city").textContent = `${weather.location}, ${weather.country}`;
