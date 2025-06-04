@@ -1,7 +1,5 @@
 const apiKey = "85a07391f9cff6eeb48b4398fdb483ca"; // api-sleutel voor OpenWeatherMap
 
-// imgs voor weer 
-
 function searchCity(){
     const city = document.getElementById("locationInput").value.trim();
     document.getElementById("result-cont").style.display = "flex"; // maak de section zichtbaar
@@ -86,23 +84,6 @@ function searchCity(){
                 document.getElementById("weather-icon").src = "img/mist.png";
                 break;
         } 
-
-        // const html = `
-        // <h2 id="city">${weather.location}, ${weather.country}</h2>
-        // <h3 id="date">${new Date().toLocaleDateString('en-EN', {
-        //     weekday: 'long',
-        //     year: 'numeric',
-        //     month: 'long',
-        //     day: ''
-        // })}</h3>
-        // <p id="temp">Temperature: ${weather.temp} °C</p>
-        // <p id="feel">Feels like: ${weather.feels} °C</p>
-        // <p id="wind">Wind: ${weather.wind} m/s</p>
-        // <p id="humid">Humidity: ${weather.humidity}%</p>
-        // <p id="desc">${weather.description}</p>
-        // <img src="https://openweathermap.org/img/wn/${weather.icon}.png" alt="${weather.description}" class="weather-img">
-        // `;
-        // document.getElementById("weather-results").innerHTML = html;
     })
     .catch(err => {
         document.getElementById("weather-results").innerHTML = `<p>Error: ${err.message}</p>`;

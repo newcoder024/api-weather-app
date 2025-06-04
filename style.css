@@ -47,6 +47,12 @@ h1{
     transition: 0.2s ease-in-out;
 }
 
+#search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 input{
     height: 5vh;
     width: 25vw;
@@ -185,6 +191,13 @@ hr{
     transition: 0.3s ease-in-out;
 }
 
+.dark-mode body{
+    background-color: #252526;
+}
+.dark-mode #result-cont{
+    background-color: #2e2e2e;
+}
+
 .dark-mode h1{
     color: #84bfff;
 }
@@ -224,10 +237,78 @@ hr{
     background-color: transparent;
 }
 
-/* voor elements van dark-mode toggle */
-/* #dark{
-    fill: white;
-    transition: 0.2s ease-in-out;
-}#dark:hover{
-    fill: #84bfff;
-} */
+@media screen and (max-width: 877px){
+    #result-cont{
+        flex-direction: column;
+        align-items: center;
+    }
+    #main-results, #weather-results{
+        width: 90vw;
+    }
+    #main-results{
+        margin-bottom: 20px;
+    }
+    .result-tab{
+        width: 40%;
+        min-width: 0;
+    }
+    #city{
+        margin-bottom: 10vh;
+    }
+    #data{
+        margin-bottom: 10vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        height: auto;
+    }
+    #result-cont{
+        flex-direction: column;
+        align-items: center;
+    }
+    #main-results, #weather-results{
+        width: 90vw;
+    }
+    #main-results{
+        margin-bottom: 20px;
+    }
+    .result-tab{
+        width: 40%;
+        min-width: 0;
+    }
+    input{
+        width: 50vw;
+    }
+    #city{
+        margin-bottom: 10vh;
+    }
+    #data{
+        margin-bottom: 10vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header img{
+        width: 100px;
+    }
+    h1{
+        font-size: 2em;
+        display: none;
+    }
+    input{
+        width: 50vw;
+    }
+    #search{
+        flex-direction: column;
+        align-items: center;
+    }
+    #search-btn{
+        width: 60px;
+    }
+    .result-tab{
+        min-width: 90%;
+        height: auto;
+    }
+}
