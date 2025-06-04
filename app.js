@@ -1,17 +1,13 @@
 const apiKey = "85a07391f9cff6eeb48b4398fdb483ca"; // api-sleutel voor OpenWeatherMap
 
 // imgs voor weer 
-let customImg = "";
-
-switch (customImg) {
-    case weather.description === "clear sky":
-}
 
 function searchCity(){
     const city = document.getElementById("locationInput").value.trim();
     document.getElementById("result-cont").style.display = "flex"; // maak de section zichtbaar
     document.getElementById("main-results").style.display = "flex"; // maak de main zichtbaar
     document.getElementById("weather-results").style.display = "flex"; // maak de weather-results zichtbaar
+    document.getElementById("data").style.display = "block"; // maak de data zichtbaar
 
     if (city === "") {
         document.getElementById("weather-results").innerHTML = "<p>Look up a city to see the weather.</p>";
@@ -59,6 +55,38 @@ function searchCity(){
             weekday: 'long',
         })}`;
 
+        let customImg = "";
+        
+        switch (weather.description) {
+            case "clear sky":
+                document.getElementById("weather-icon").src = "img/zon.png";
+                break;
+            case "few clouds":
+                document.getElementById("weather-icon").src = "img/few-clouds.png";
+                break;
+            case "scattered clouds":
+                document.getElementById("weather-icon").src = "img/scatt-clouds.png";
+                break;
+            case "broken clouds":
+                document.getElementById("weather-icon").src = "img/broken-clouds.png";
+                break;
+            case "shower rain":
+                document.getElementById("weather-icon").src = "img/shower-rain.png";
+                break;
+            case "rain":
+                document.getElementById("weather-icon").src = "img/rain.png";
+                break;
+            case "thunderstorm":
+                document.getElementById("weather-icon").src = "img/thunderstorm.png";
+                break;
+            case "snow":
+                document.getElementById("weather-icon").src = "img/snow.png";
+                break;
+            case "mist":
+                document.getElementById("weather-icon").src = "img/mist.png";
+                break;
+        } 
+
         // const html = `
         // <h2 id="city">${weather.location}, ${weather.country}</h2>
         // <h3 id="date">${new Date().toLocaleDateString('en-EN', {
@@ -81,3 +109,17 @@ function searchCity(){
     })
 }
 
+// darkmode
+function toggleMode(){
+    var body = document.body;
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+        document.getElementById("light").style.display = "none";
+        document.getElementById("dark").style.display = "block";
+        document.getElementById("mode").style.backgroundColor = "#FFFF";
+    } else {
+        document.getElementById("light").style.display = "block";
+        document.getElementById("dark").style.display = "none";    
+    }
+}

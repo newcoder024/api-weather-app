@@ -31,12 +31,17 @@ h1{
 
 /* voor dark en light mode.. */
 #mode{
-    height: 20px;
-    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 35px;
+    width: 35px;
     border-radius: 999px;
     margin-left: 20px;
     cursor: pointer;
     border: none;
+    background-color: white;
 }#mode:hover svg{
     fill: #68B1FF;
     transition: 0.2s ease-in-out;
@@ -76,10 +81,19 @@ label{
 }
 
 .weather-img{
-    background-color: #68B1FF;
     height: 150px;
     width: 150px;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#weather-icon{
+    height: auto;
+    width: 100%;
+    padding: 15px;
+
 }
 
 #result-cont{
@@ -162,3 +176,58 @@ hr{
 .middle{
     text-align: center;
 }
+
+/* DARK & LIGHT MODE */
+
+.dark-mode{
+    background-color: #252526;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-mode h1{
+    color: #84bfff;
+}
+
+.dark-mode input{
+    background-color: #252526;
+    color: #ffffff;
+    border: 2px solid #84bfff;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-mode #search-btn{
+    background-color: #84bfff;
+    color: #ffffff;
+}
+
+.dark-mode #search-btn:hover{
+    background-color: #68B1FF;
+}
+
+.dark-mode p {
+    color: white;
+}
+
+.dark-mode #weather-results{
+    background-color: #2e2e2e;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-mode #main-results{
+    background-color: #252526;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-mode #mode{
+    background-color: transparent;
+}
+
+/* voor elements van dark-mode toggle */
+/* #dark{
+    fill: white;
+    transition: 0.2s ease-in-out;
+}#dark:hover{
+    fill: #84bfff;
+} */
