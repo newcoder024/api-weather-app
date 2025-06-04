@@ -56,7 +56,7 @@ function searchCity(){
         let customImg = "";
         
         switch (weather.description) {
-            case "clear sky":
+            case "clear sky" :
                 document.getElementById("weather-icon").src = "img/zon.png";
                 break;
             case "few clouds":
@@ -65,23 +65,73 @@ function searchCity(){
             case "scattered clouds":
                 document.getElementById("weather-icon").src = "img/scatt-clouds.png";
                 break;
+            case "overcast clouds":
             case "broken clouds":
                 document.getElementById("weather-icon").src = "img/broken-clouds.png";
                 break;
+            case "light intensity shower rain":
+            case "heavy intensity shower rain":
+            case "ragged shower rain":
+            case "light intensity drizzle":
+            case "drizzle":
+            case "heavy intensity drizzle":
+            case "light intensity drizzle rain":
+            case "drizzle rain":
+            case "heavy intensity drizzle rain":
+            case "shower drizzle":
+            case "light rain and drizzle":
+            case "heavy shower rain and drizzle":
             case "shower rain":
                 document.getElementById("weather-icon").src = "img/shower-rain.png";
                 break;
+            case "light rain":
+            case "moderate rain":
+            case "heavy intensity rain":
+            case "very heavy rain":
+            case "extreme rain":
             case "rain":
                 document.getElementById("weather-icon").src = "img/rain.png";
                 break;
+            case "thunderstorm with light rain":
+            case "thunderstorm with rain":
+            case "thunderstorm with heavy rain":
+            case "light thunderstorm":
+            case "heavy thunderstorm":
+            case "ragged thunderstorm":
+            case "thunderstorm with light drizzle":
+            case "thunderstorm with drizzle":
+            case "thunderstorm with heavy drizzle":
             case "thunderstorm":
                 document.getElementById("weather-icon").src = "img/thunderstorm.png";
                 break;
+            case "light snow":
+            case "heavy snow":
+            case "sleet":
+            case "light shower sleet":
+            case "shower sleet":
+            case "light rain and snow":
+            case "rain and snow":
+            case "light shower snow":
+            case "shower snow":
+            case "heavy shower snow":
+            case "freezing rain":
             case "snow":
                 document.getElementById("weather-icon").src = "img/snow.png";
                 break;
+            case "smoke":
+            case "haze":
+            case "sand/dust whirls":
+            case "fog":
+            case "sand":
+            case "dust":
+            case "volcanic ash":
+            case "squalls":
+            case "tornado":
             case "mist":
                 document.getElementById("weather-icon").src = "img/mist.png";
+                break;
+            default:
+                document.getElementById("weather-icon").src = "img/few-clouds.png";
                 break;
         } 
     })
